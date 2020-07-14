@@ -1,6 +1,7 @@
 Back on C# (.NET Core) 
 
 Апи прослушанной музыки:
+
 *Создание записи:
 Post  /api/ListenedMusics
 {"MusicName": {name}, "Favorit": {bool}}
