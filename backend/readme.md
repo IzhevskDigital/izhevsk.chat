@@ -1,6 +1,6 @@
 Back on C# (.NET Core) 
 
-#Апи прослушанной музыки:
+Апи прослушанной музыки:
 *Создание записи:
 Post  /api/ListenedMusics
 {"MusicName": {name}, "Favorit": {bool}}
@@ -9,7 +9,7 @@ Post  /api/ListenedMusics
 Get /api/ListenedMusics -Возращает весь массив прослушанной музыки
 Get /api/ListenedMusics/{id} -Возращает записи по идентификатору. Где {id} идентификатор записи.
 
-* Изменение записи
+*Изменение записи
 Put /api/ListenedMusics/{id} -Где {id} идентификатор записи.
 {"MusicName": {name}, "Favorit": {bool}}
 
