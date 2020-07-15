@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using SpotifyWrapperApi.Data;
+using SpotifyWrapperApi.Models;
 
 namespace SpotifyWrapperApi
 {

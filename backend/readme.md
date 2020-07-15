@@ -78,5 +78,9 @@ Put /api/NewsModels/{id} -Где {id} идентификатор записи.
 Delete /api/NewsModels/{id} - Где {id} идентификатор записи.
 ```
 
+# Апи для профиля:
 
-
+* Получение профиля
+```
+Get /api/ProfileModels/{username} - Возвращает профиль по username;
+```

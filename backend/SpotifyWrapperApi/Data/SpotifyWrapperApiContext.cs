@@ -17,5 +17,7 @@ namespace SpotifyWrapperApi.Data
         public DbSet<SpotifyWrapperApi.Models.ListenedMusic> ListenedMusic { get; set; }
 
         public DbSet<SpotifyWrapperApi.Models.NewsModel> NewsModel { get; set; }
+
+        public DbSet<SpotifyWrapperApi.Models.ProfileModel> ProfileModel { get; set; }
     }
 }

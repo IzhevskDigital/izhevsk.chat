@@ -19,6 +19,16 @@ namespace SpotifyWrapperApi.Controllers
         public NewsModelsController(SpotifyWrapperApiContext context)
         {
             _context = context;
+            //_context.NewsModel.Add(new NewsModel
+            //{
+            //    PublicationDay = "12.09.2001",
+            //    PublicationTime = "11:45",
+            //    PostAuthor = "Pavel",
+            //    PostTitle = "Новый альбом",
+            //    PostContent = "Какой то текст",
+            //    PostPicture = "none"
+            //});
+            //_context.SaveChanges();
         }
 
         // GET: api/NewsModels

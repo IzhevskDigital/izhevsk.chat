@@ -19,6 +19,12 @@ namespace SpotifyWrapperApi.Controllers
         public ListenedMusicsController(SpotifyWrapperApiContext context)
         {
             _context = context;
+            //_context.ListenedMusic.Add(new ListenedMusic
+            //{
+            //    MusicName = "SuperStar",
+            //    Favorit = true
+            //});
+            //_context.SaveChanges();
         }
 
         // GET: api/ListenedMusics
