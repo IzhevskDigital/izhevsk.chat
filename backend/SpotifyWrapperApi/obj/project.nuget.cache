@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K0sa91U8ae3Qhia4qP1tRayNMAU5vdopauccFBvekAHB6aYk3xtUHTC4idJ06IRmHtvMmqDVu/5cBh7U1jRGmQ==",
+  "dgSpecHash": "6/H2kxYeiSfE14oevL0kr2bgh+JWTLmMqV2cnq2dpMqXCbsG/bpnXm9QtVypTtzygu01dV7G6ZAgf3WzLdJwYg==",
   "success": true,
-  "projectFilePath": "F:\\_SummerPractics\\SpotifyWrapperApi\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
+  "projectFilePath": "F:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

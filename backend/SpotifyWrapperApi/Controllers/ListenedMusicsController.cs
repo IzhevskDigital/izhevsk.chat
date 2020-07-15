@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using SpotifyWrapperApi.Data;
 using SpotifyWrapperApi.Models;
 
 namespace SpotifyWrapperApi.Controllers
@@ -13,25 +14,25 @@ namespace SpotifyWrapperApi.Controllers
     [ApiController]
     public class ListenedMusicsController : ControllerBase
     {
-        private readonly ListenedMusicContext _context;
+        private readonly SpotifyWrapperApiContext _context;
 
-        public ListenedMusicsController(ListenedMusicContext context)
+        public ListenedMusicsController(SpotifyWrapperApiContext context)
         {
             _context = context;
         }
 
         // GET: api/ListenedMusics
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<ListenedMusic>>> GetListenedMusicItems()
+        public async Task<ActionResult<IEnumerable<ListenedMusic>>> GetListenedMusic()
         {
-            return await _context.ListenedMusicItems.ToListAsync();
+            return await _context.ListenedMusic.ToListAsync();
         }
 
-        // GET: api/ListenedMusics/5
+        // GET: api/ListenedMusics/{id}
         [HttpGet("{id}")]
         public async Task<ActionResult<ListenedMusic>> GetListenedMusic(int id)
         {
-            var listenedMusic = await _context.ListenedMusicItems.FindAsync(id);
+            var listenedMusic = await _context.ListenedMusic.FindAsync(id);
 
             if (listenedMusic == null)
             {
@@ -41,9 +42,7 @@ namespace SpotifyWrapperApi.Controllers
             return listenedMusic;
         }
 
-        // PUT: api/ListenedMusics/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
+        // PUT: api/ListenedMusics/{id}
         [HttpPut("{id}")]
         public async Task<IActionResult> PutListenedMusic(int id, ListenedMusic listenedMusic)
         {
@@ -74,28 +73,26 @@ namespace SpotifyWrapperApi.Controllers
         }
 
         // POST: api/ListenedMusics
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for
-        // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<ListenedMusic>> PostListenedMusic(ListenedMusic listenedMusic)
         {
-            _context.ListenedMusicItems.Add(listenedMusic);
+            _context.ListenedMusic.Add(listenedMusic);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetListenedMusicItems), new { id = listenedMusic.MusicId }, listenedMusic);
+            return CreatedAtAction("GetListenedMusic", new { id = listenedMusic.MusicId }, listenedMusic);
         }
 
-        // DELETE: api/ListenedMusics/5
+        // DELETE: api/ListenedMusics/{id}
         [HttpDelete("{id}")]
         public async Task<ActionResult<ListenedMusic>> DeleteListenedMusic(int id)
         {
-            var listenedMusic = await _context.ListenedMusicItems.FindAsync(id);
+            var listenedMusic = await _context.ListenedMusic.FindAsync(id);
             if (listenedMusic == null)
             {
                 return NotFound();
             }
 
-            _context.ListenedMusicItems.Remove(listenedMusic);
+            _context.ListenedMusic.Remove(listenedMusic);
             await _context.SaveChangesAsync();
 
             return listenedMusic;
@@ -103,7 +100,7 @@ namespace SpotifyWrapperApi.Controllers
 
         private bool ListenedMusicExists(int id)
         {
-            return _context.ListenedMusicItems.Any(e => e.MusicId == id);
+            return _context.ListenedMusic.Any(e => e.MusicId == id);
         }
     }
 }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\_SummerPractics\\SpotifyWrapperApi\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj": {}
+    "F:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj": {}
   },
   "projects": {
-    "F:\\_SummerPractics\\SpotifyWrapperApi\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj": {
+    "F:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\_SummerPractics\\SpotifyWrapperApi\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
+        "projectUniqueName": "F:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
         "projectName": "SpotifyWrapperApi",
-        "projectPath": "F:\\_SummerPractics\\SpotifyWrapperApi\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
+        "projectPath": "F:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "F:\\_SummerPractics\\SpotifyWrapperApi\\SpotifyWrapperApi\\obj\\",
+        "outputPath": "F:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

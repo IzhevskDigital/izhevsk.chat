@@ -1,10 +1,10 @@
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
-using SpotifyWrapperApi.Models;
+using SpotifyWrapperApi.Data;
 
 namespace SpotifyWrapperApi
 {
@@ -19,8 +19,10 @@ namespace SpotifyWrapperApi
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ListenedMusicContext>(opt =>
-               opt.UseInMemoryDatabase("ListenedMusicList"));
+
+            services.AddDbContext<SpotifyWrapperApiContext>(opt =>
+               opt.UseInMemoryDatabase("SpotifyWrapperApiContext"));
+
             services.AddControllers();
         }
 
