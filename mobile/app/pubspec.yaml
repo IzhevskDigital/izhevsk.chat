@@ -32,13 +32,22 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-
+        
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
 
 # The following section is specific to Flutter.
 flutter:
-
+  fonts:
+    - family: Cookie
+      fonts:
+        - asset: assets/fonts/Cookie-Regular.ttf
+          
+  assets:   
+    - lib/BottomNavigationBar/images/Music.svg
+    - lib/BottomNavigationBar/images/Profile.svg
+    - lib/BottomNavigationBar/images/Settings.svg
+    - lib/BottomNavigationBar/images/Wallpost.svg
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
