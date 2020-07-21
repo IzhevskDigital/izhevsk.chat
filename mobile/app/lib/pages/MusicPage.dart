@@ -1,48 +1,104 @@
 import 'package:flutter/material.dart';
+import 'package:app/pages/album.dart';
 
 class MusicPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title:
-            Text('Music', style: TextStyle(fontSize: 50, fontFamily: 'Cookie')),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.playlist_add),
-            tooltip: 'Добавить плейлист',
-            onPressed: () => openPlaylistAdd(context),
-          ),
-        ],
-      ),
-      body: Column(
-        children: <Widget>[
-          Expanded(
-            child: Container(
-              child: Center(child: Text('Added albums')),
+    TextStyle textStyle = TextStyle(fontSize: 30);
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverAppBar(
+          pinned: true,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.playlist_add),
+              tooltip: 'Добавить плейлист',
+              onPressed: () => openPlaylistAdd(context),
             ),
-            flex: 1,
+          ],
+          expandedHeight: 100.0,
+          flexibleSpace: FlexibleSpaceBar(
+            title: Text('Music',
+                style: TextStyle(fontSize: 50, fontFamily: 'Cookie')),
           ),
-          Expanded(
-            child: Container(
-              color: Colors.grey,
-              child: Center(
-                child: Text('Playlists'),
-              ),
-            ),
-            flex: 2,
+        ),
+        SliverList(
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return Column(
+                children: <Widget>[
+                  Container(
+                    child: Text('Added albums', style: TextStyle(fontSize: 40)),
+                  ),
+                  Container(
+                    height: 100,
+                    color: Colors.grey[300],
+                    child: Row(children: <Widget>[
+                      RaisedButton(
+                        color: Colors.red,
+                        onPressed: () => null,
+                        child: Text('Главный плейлист'),
+                      ),
+                      RaisedButton(
+                        color: Colors.blue,
+                        onPressed: () => null,
+                        child: Text('Playlists $index'),
+                      ),
+                      RaisedButton(
+                        color: Colors.green,
+                        onPressed: () => null,
+                        child: Text('Playlists $index'),
+                      ),
+                    ]),
+                  ),
+                ],
+              );
+            },
+            childCount: 1,
           ),
-          Expanded(
-            child: Container(
-              color: Colors.red,
-              child: Center(
-                child: Text('Music'),
-              ),
-            ),
-            flex: 3,
+        ),
+        SliverFixedExtentList(
+          itemExtent: 100,
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return Container(
+                alignment: Alignment.centerRight,
+                color: Colors.white,
+                child: RaisedButton(
+                  color: Colors.white,
+                  textColor: Colors.black,
+                  onPressed: () => null,
+                  child: Row(
+                    children: <Widget>[
+                      Column(
+                        children: <Widget>[
+                          Text(' $index ', style: textStyle),
+                        ],
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Text(nameSong + ' ', style: textStyle),
+                        ],
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Text(autor + ' ', style: textStyle),
+                        ],
+                      ),
+                      Column(
+                        children: <Widget>[
+                          Text(timer + ' ', style: textStyle),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+            childCount: 20,
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 

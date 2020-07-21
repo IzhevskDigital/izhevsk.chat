@@ -1,45 +1,60 @@
+import 'package:app/pages/album.dart';
 import 'package:flutter/material.dart';
+//import 'package:app/pages/album.dart';
 
 class NewsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Wallpost',
-            style: TextStyle(fontSize: 50, fontFamily: 'Cookie')),
-        actions: <Widget>[
-          IconButton(
-            icon: Icon(Icons.view_list),
-            tooltip: 'Жанры музыки',
-            onPressed: () => openStylePage(context),
-          ),
-        ],
-      ),
-      body: Center(
-        child: Column(
-          children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: Container(
-                color: Colors.white,
-                child: Center(
-                  child: Image.network(
-                      'http://eaassets-a.akamaihd.net/battlelog/prod/emblem/342/900/320/2955061318516661358.png?v=1530900955',
-                      height: 100,
-                      width: 100),
-                ),
-              ),
-            ),
-            Expanded(
-              flex: 1,
-              child: Container(
-                color: Colors.green,
-                child: Center(child: Text('Story')),
-              ),
+    return CustomScrollView(
+      slivers: <Widget>[
+        SliverAppBar(
+          pinned: true,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.list),
+              onPressed: () => openStylePage(context),
             ),
           ],
+          expandedHeight: 100.0,
+          flexibleSpace: FlexibleSpaceBar(
+            title: Text('Wallpost',
+                style: TextStyle(fontFamily: 'Cookie', fontSize: 50)),
+          ),
         ),
-      ),
+        SliverFixedExtentList(
+          itemExtent: 366,
+          delegate: SliverChildBuilderDelegate(
+            (BuildContext context, int index) {
+              return Container(
+                alignment: Alignment.center,
+                color: Colors.white,
+                child: Center(
+                  child: Column(
+                    children: <Widget>[
+                      IconButton(
+                        icon: Image.network(
+                            'http://eaassets-a.akamaihd.net/battlelog/prod/emblem/342/900/320/2955061318516661358.png?v=1530900955'),
+                        onPressed: () => openAlbum(context),
+                        iconSize: 150,
+                      ),
+                      Container(
+                        height: 200,
+                        width: 300,
+                        child: Center(
+                          child: Text(
+                              'Группа "Plono" представила свой новый альбом, отображающий жизнь в современной России, назвав его "Пыль".',
+                              textAlign: TextAlign.justify),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              );
+            },
+            childCount: 20,
+          ),
+        ),
+      ],
     );
   }
 
@@ -55,50 +70,6 @@ class NewsPage extends StatelessWidget {
               'Здесь будет список с жанрами музыки.',
               style: TextStyle(fontSize: 24),
             ),
-          ),
-        );
-      },
-    ));
-  }
-
-  void openAlbum(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(
-      builder: (BuildContext context) {
-        return Scaffold(
-          appBar: AppBar(
-            title: Text('Dust'),
-          ),
-          body: Column(
-            children: <Widget>[
-              Expanded(
-                child: Container(
-                  child: Center(
-                    child: Text('Image'),
-                  ),
-                ),
-              ),
-              Expanded(
-                child: Container(
-                  child: Center(
-                    child: Column(
-                      children: <Widget>[
-                        Column(
-                          children: <Widget>[
-                            Row(
-                              children: <Widget>[
-                                Text('1'),
-                                Text('Dust'),
-                                Text('2:45'),
-                              ],
-                            ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ],
           ),
         );
       },

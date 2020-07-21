@@ -57,7 +57,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.featured_play_list),
-            title: Text('News'),
+            title: Text('Wallpost'),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.music_note),
