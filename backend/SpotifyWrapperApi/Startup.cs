@@ -6,6 +6,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using SpotifyWrapperApi.Data;
 using SpotifyWrapperApi.Models;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace SpotifyWrapperApi
 {
@@ -25,10 +26,17 @@ namespace SpotifyWrapperApi
                opt.UseInMemoryDatabase("SpotifyWrapperApiContext"));
 
             services.AddControllers();
+            services.AddSwaggerGen();
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+            });
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

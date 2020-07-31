@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj": {}
+    "E:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj": {}
   },
   "projects": {
-    "F:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj": {
+    "E:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
+        "projectUniqueName": "E:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
         "projectName": "SpotifyWrapperApi",
-        "projectPath": "F:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
+        "projectPath": "E:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-        "outputPath": "F:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\obj\\",
+        "outputPath": "E:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -38,9 +38,13 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.StaticFiles": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore.InMemory": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[3.1.6, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
@@ -48,7 +52,7 @@
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
-              "version": "[3.1.5, )"
+              "version": "[3.1.6, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
@@ -59,6 +63,14 @@
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
               "version": "[3.1.3, )"
+            },
+            "NSwag.SwaggerGeneration.AspNetCore": {
+              "target": "Package",
+              "version": "[12.3.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.5.1, )"
             }
           },
           "imports": [

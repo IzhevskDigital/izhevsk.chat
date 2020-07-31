@@ -41,7 +41,6 @@ namespace SpotifyWrapperApi.Controllers
         [HttpGet("{username}")]
         public async Task<ActionResult<ProfileModel>> GetProfileModel(string username)
         {
-            //var profileModel = await _context.ProfileModel.FindAsync(username);
 
             var getProfile = await _context.ProfileModel.FindAsync(username);
             if (getProfile == null)
