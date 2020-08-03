@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:app/pages/NewsPage.dart';
 import 'package:app/pages/MusicPage.dart';
 import 'package:app/pages/ProfilePage.dart';
+import 'package:app/pages/SettingsPage.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,7 +10,8 @@ void main() {
 
 //Приложение
 class MyApp extends StatelessWidget {
-  final String title = 'App';
+  final String title = 'Application';
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,6 +24,16 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.light,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
+      darkTheme: ThemeData(
+        textTheme: Theme.of(context).textTheme.apply(
+              fontFamily: 'Cookie',
+              bodyColor: Colors.black,
+              displayColor: Colors.black,
+            ),
+        primaryColor: Colors.black,
+        brightness: Brightness.dark,
+      ),
+      themeMode: themeMode,
       home: MyStatefulWidget(),
     );
   }
@@ -56,15 +68,21 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.featured_play_list),
+            icon: Image(
+              image: AssetImage('assets/images/wallpost.png'),
+            ),
             title: Text('Wallpost'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.music_note),
+            icon: Image(
+              image: AssetImage('assets/images/music.png'),
+            ),
             title: Text('Music'),
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.account_circle),
+            icon: Image(
+              image: AssetImage('assets/images/profile.png'),
+            ),
             title: Text('Account'),
           ),
         ],

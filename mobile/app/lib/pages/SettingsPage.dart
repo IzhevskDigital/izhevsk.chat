@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+ThemeMode themeMode = ThemeMode.light;
 bool _isSwitched = false;
 
 class SettingsPage extends StatefulWidget {
@@ -50,6 +51,11 @@ class _SettingsPageState extends State<SettingsPage> {
   void switchPageStyle(bool isSwitch) {
     setState(() {
       _isSwitched = isSwitch;
+      if (_isSwitched == true) {
+        themeMode = ThemeMode.dark;
+      } else {
+        themeMode = ThemeMode.light;
+      }
     });
   }
 }
