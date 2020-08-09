@@ -6,8 +6,7 @@ String autor = 'NoName';
 String timer = '2:45';
 
 void openAlbum(BuildContext context) {
-  TextStyle textStyle = TextStyle(fontSize: 35);
-
+  TextStyle textStyle = TextStyle(fontSize: 40);
   Navigator.push(context, MaterialPageRoute(
     builder: (BuildContext context) {
       return CustomScrollView(

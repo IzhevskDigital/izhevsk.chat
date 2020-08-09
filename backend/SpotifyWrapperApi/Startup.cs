@@ -8,6 +8,8 @@ using SpotifyWrapperApi.Data;
 using SpotifyWrapperApi.Models;
 using Microsoft.AspNetCore.StaticFiles;
 using Microsoft.AspNetCore.Mvc;
+using SpotifyWrapperApi.Config;
+using SpotifyWrapperApi.MongoModels;
 
 namespace SpotifyWrapperApi
 {
@@ -22,12 +24,16 @@ namespace SpotifyWrapperApi
 
         public void ConfigureServices(IServiceCollection services)
         {
+
             var config = new ServerConfig();
             Configuration.Bind(config);
 
-            var MusicContext = new SpotifyAppContext(config.MongoDB);
+            var MusContext = new MusicContext(config.MongoDB);
+            var repo = new MusicRepository(MusContext);
+            services.AddSingleton<IMusicRepository>(repo);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+
             services.AddDbContext<SpotifyWrapperApiContext>(opt =>
                opt.UseInMemoryDatabase("SpotifyWrapperApiContext"));
 

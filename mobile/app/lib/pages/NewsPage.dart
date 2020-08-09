@@ -33,7 +33,7 @@ class NewsPage extends StatelessWidget {
                     children: <Widget>[
                       IconButton(
                         icon: Image.network(
-                            'https://avatanplus.com/files/resources/original/575af465131c91553b4aaad6.jpg'),
+                            'http://eaassets-a.akamaihd.net/battlelog/prod/emblem/342/900/320/2955061318516661358.png?v=1530900955'),
                         onPressed: () => openAlbum(context),
                         iconSize: 150,
                       ),
@@ -51,7 +51,7 @@ class NewsPage extends StatelessWidget {
                 ),
               );
             },
-            //childCount: 20,
+            childCount: 20,
           ),
         ),
       ],

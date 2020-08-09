@@ -12,7 +12,7 @@ class ProfilePage extends StatelessWidget {
           IconButton(
             icon: Icon(Icons.settings),
             tooltip: 'Настройки',
-            onPressed: () => openSettingsPage(context),
+            onPressed: () => SettingsPage(),
           ),
         ],
       ),
@@ -24,29 +24,28 @@ class ProfilePage extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: Container(
-                    color: Colors.white,
                     height: 200,
+                    color: Colors.white,
                     child: Center(
                       child: Image.network(
-                          'http://eaassets-a.akamaihd.net/battlelog/prod/emblem/342/900/320/2955061318516661358.png?v=1530900955',
-                          scale: 2),
+                          'http://eaassets-a.akamaihd.net/battlelog/prod/emblem/342/900/320/2955061318516661358.png?v=1530900955'),
                     ),
                   ),
                 ),
                 Expanded(
                   flex: 1,
                   child: Container(
-                    color: Colors.white,
                     height: 200,
-                    alignment: Alignment.center,
-                    child: Center(
-                      child: ListView(
-                        children: <Widget>[
-                          Text('NickName', style: TextStyle(fontSize: 55)),
-                          Text('Подписка оформлена',
-                              style: TextStyle(fontSize: 15)),
-                        ],
-                      ),
+                    color: Colors.red[50],
+                    child: Column(
+                      children: <Widget>[
+                        Center(
+                          child:
+                              Text('NickName', style: TextStyle(fontSize: 55)),
+                        ),
+                        Text('Подписка оформлена',
+                            style: TextStyle(fontSize: 15)),
+                      ],
                     ),
                   ),
                 ),
@@ -54,7 +53,6 @@ class ProfilePage extends StatelessWidget {
             ),
             Expanded(
               child: Container(
-                color: Colors.white,
                 child: Center(
                     child: Column(
                   children: <Widget>[
@@ -71,13 +69,5 @@ class ProfilePage extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  void openSettingsPage(BuildContext context) {
-    Navigator.push(context, MaterialPageRoute(
-      builder: (BuildContext context) {
-        return SettingsPage();
-      },
-    ));
   }
 }

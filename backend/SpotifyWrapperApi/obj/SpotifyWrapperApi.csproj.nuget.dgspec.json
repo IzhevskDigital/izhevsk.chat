@@ -10,11 +10,11 @@
         "projectUniqueName": "E:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
         "projectName": "SpotifyWrapperApi",
         "projectPath": "E:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\SpotifyWrapperApi.csproj",
-        "packagesPath": "C:\\Users\\Danil\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "E:\\izhevsk.chat\\backend\\SpotifyWrapperApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Danil\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -48,7 +48,7 @@
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[3.1.6, )"
+              "version": "[3.1.5, )"
             },
             "Microsoft.EntityFrameworkCore.Sqlite": {
               "target": "Package",
@@ -58,11 +58,11 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[3.1.6, )"
+              "version": "[3.1.5, )"
             },
             "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
               "target": "Package",
-              "version": "[3.1.3, )"
+              "version": "[3.1.4, )"
             },
             "MongoDB.Driver": {
               "target": "Package",
@@ -95,7 +95,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
         }
       }
     }
