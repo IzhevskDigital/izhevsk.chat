@@ -1,6 +1,6 @@
-import 'package:app/pages/album.dart';
+import 'package:app/Theme/constants.dart';
+import 'package:app/buttons/buttonAlbum.dart';
 import 'package:flutter/material.dart';
-//import 'package:app/pages/album.dart';
 
 class NewsPage extends StatelessWidget {
   @override
@@ -17,12 +17,11 @@ class NewsPage extends StatelessWidget {
           ],
           expandedHeight: 100.0,
           flexibleSpace: FlexibleSpaceBar(
-            title: Text('Wallpost',
-                style: TextStyle(fontFamily: 'Cookie', fontSize: 50)),
+            title: Text('Wallpost', style: titleStyle),
           ),
         ),
         SliverFixedExtentList(
-          itemExtent: 366,
+          itemExtent: 320,
           delegate: SliverChildBuilderDelegate(
             (BuildContext context, int index) {
               return Container(
@@ -31,20 +30,21 @@ class NewsPage extends StatelessWidget {
                 child: Center(
                   child: Column(
                     children: <Widget>[
-                      IconButton(
-                        icon: Image.network(
-                            'https://avatanplus.com/files/resources/original/575af465131c91553b4aaad6.jpg'),
-                        onPressed: () => openAlbum(context),
-                        iconSize: 150,
-                      ),
                       Container(
-                        height: 200,
-                        width: 300,
-                        child: Center(
-                          child: Text(
+                        height: 320,
+                        margin: EdgeInsets.only(left: 30, right: 30),
+                        child: Column(children: <Widget>[
+                          Center(
+                            child: ButtonAlbum.forImage(
+                                'Imagine Dragons',
+                                'https://avatars.yandex.net/get-music-content/118603/36b7d6e2.a.4440406-1/m1000x1000?webp=false',
+                                150),
+                          ),
+                          Text(
                               'Группа "Plono" представила свой новый альбом, отображающий жизнь в современной России, назвав его "Пыль".',
-                              textAlign: TextAlign.justify),
-                        ),
+                              textAlign: TextAlign.justify,
+                              style: textStyle),
+                        ]),
                       ),
                     ],
                   ),

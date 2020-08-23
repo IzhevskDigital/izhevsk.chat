@@ -39,19 +39,17 @@ class MyApp extends StatelessWidget {
   }
 }
 
-//Виджет
+//Виджет, который будет менять свое состояние
 class MyStatefulWidget extends StatefulWidget {
-  MyStatefulWidget({Key key}) : super(key: key);
-
   @override
   _MyStatefulWidgetState createState() => _MyStatefulWidgetState();
 }
 
 //Состояние виджета
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-  int _selectedIndex = 0;
+  int selectedIndex = 0;
   //Список виджетов, которые будут отображаться на экране
-  static List<Widget> _widgetOptions = <Widget>[
+  static List<Widget> widgetOptions = <Widget>[
     NewsPage(),
     MusicPage(),
     ProfilePage(),
@@ -62,7 +60,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
     return Scaffold(
       //контент
       body: Center(
-        child: _widgetOptions.elementAt(_selectedIndex),
+        child: widgetOptions.elementAt(selectedIndex),
       ),
       //нижние кнопки
       bottomNavigationBar: BottomNavigationBar(
@@ -86,7 +84,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             title: Text('Account'),
           ),
         ],
-        currentIndex: _selectedIndex,
+        currentIndex: selectedIndex,
         selectedItemColor: Colors.amber[800],
         unselectedItemColor: Colors.grey,
         onTap: _onItemTapped,
@@ -96,7 +94,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
 
   void _onItemTapped(int index) {
     setState(() {
-      _selectedIndex = index;
+      selectedIndex = index;
     });
   }
 }
